@@ -32,8 +32,14 @@ std::vector<bool> OddMask(std::vector<int>);
 // Sums all numbers in a vector and returns the resulting value
 int Sum(std::vector<int> nums);
 
+
+///
 // Multiplies all numbers in a vector together and returns the resulting value
-int Product(std::vector<int> nums);
+int Product(std::vector<int> nums){
+    using std::begin;
+    using std::end;
+    auto multi = std::accumulate(begin(vars), end(vars), 1, std::multiplies<int>());
+}
 
 // Adds an integer n to each element of a given vector
 std::vector<int> VectorPlusN(std::vector<int> v, int n);
@@ -54,8 +60,12 @@ int NthFibonacci(int n);
 // takes an int, n, and returns the factorial of that int (n!)
 int Factorial(int n);
 
+///
 // returns -1 if the number is negative and 1 if positive
-int Sign(int num);
+int Sign(int num){
+    int output = (num < 0) ? -1 : 1;
+    return output;
+}
 
 // takes two vectors of doubles, a and b. The function then removes elements from a if they are also in b.
 // If the double is in b, but not in a, nothing happens.
