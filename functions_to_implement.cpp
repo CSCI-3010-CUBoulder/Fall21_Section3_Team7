@@ -33,7 +33,11 @@ std::vector<bool> OddMask(std::vector<int>);
 int Sum(std::vector<int> nums);
 
 // Multiplies all numbers in a vector together and returns the resulting value
-int Product(std::vector<int> nums);
+int Product(std::vector<int> nums){
+    using std::begin;
+    using std::end;
+    auto multi = std::accumulate(begin(vars), end(vars), 1, std::multiplies<int>());
+}
 
 // Adds an integer n to each element of a given vector
 std::vector<int> VectorPlusN(std::vector<int> v, int n);
@@ -92,8 +96,12 @@ std::vector<double> VectorTimesN(std::vector<double> v, double n);
 // values n*1, n*2, n*3... up to n*m
 std::vector<double> Multiples(double n, double m);
 
+//Kill me
 // returns -1 if the number is negative and 1 if positive
-double Sign(double num);
+int Sign(int num){
+    int output = (num < 0) ? -1 : 1;
+    return output;
+}
 
 
 // adds n to each element of the vector
