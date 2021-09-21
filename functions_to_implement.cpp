@@ -1,3 +1,5 @@
+#include <iostream>
+#include <vector>
 /* String functions section */
 
 // Splits a single string on separator into a vector of strings
@@ -32,15 +34,8 @@ std::vector<bool> OddMask(std::vector<int>);
 // Sums all numbers in a vector and returns the resulting value
 int Sum(std::vector<int> nums);
 
-
-///
 // Multiplies all numbers in a vector together and returns the resulting value
-#include <numeric>
-int Product(std::vector<int> nums){
-
-    return 1;
-
-}
+int Product(std::vector<int> nums);
 
 // Adds an integer n to each element of a given vector
 std::vector<int> VectorPlusN(std::vector<int> v, int n);
@@ -59,14 +54,15 @@ std::vector<int> SquaresUntil(int n);
 int NthFibonacci(int n);
 
 // takes an int, n, and returns the factorial of that int (n!)
-int Factorial(int n);
-
-///
-// returns -1 if the number is negative and 1 if positive
-int Sign(int num){
-    int output = (num < 0) ? -1 : 1;
-    return output;
+int Factorial(int n){
+	if(n>1)
+		return n*Factorial(n-1);
+	else
+		return 1;
 }
+
+// returns -1 if the number is negative and 1 if positive
+int Sign(int num);
 
 // takes two vectors of doubles, a and b. The function then removes elements from a if they are also in b.
 // If the double is in b, but not in a, nothing happens.
@@ -108,7 +104,13 @@ double Sign(double num);
 
 
 // adds n to each element of the vector
-std::vector<int> AddN(std::vector<int>, int n);
+std::vector<int> AddN(std::vector<int> v, int n)
+{
+	for(int i=0;i<(int)v.size();i++){
+		v[i]+=n;
+	}
+	return v;
+}
 
 // adds n to each element of the vector
 std::vector<double> AddN(std::vector<double>, double n);
@@ -122,3 +124,12 @@ std::vector<int> SubtractN(std::vector<int>, int n);
 
 // subtracts n to each element of the vector
 std::vector<double> SubtractN(std::vector<double>, double n);
+
+// int main(){
+// 	std::cout << Factorial (5) <<std::endl;
+// 	std::vector<int> v{1,2,3};
+// 	std::vector<int> res = AddN(v, 5);
+// 	for(int i=0;i<res.size();i++){
+// 		std::cout<<res[i]<<" ";
+// 	}
+// }
