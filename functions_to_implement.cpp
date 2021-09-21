@@ -38,7 +38,7 @@ int Sum(std::vector<int> nums);
 int Product(std::vector<int> nums){
     using std::begin;
     using std::end;
-    auto multi = std::accumulate(begin(vars), end(vars), 1, std::multiplies<int>());
+    auto multi = std::accumulate(begin(nums), end(nums), 1, std::multiplies<int>());
 }
 
 // Adds an integer n to each element of a given vector
