@@ -35,6 +35,7 @@ int Sum(std::vector<int> nums);
 
 ///
 // Multiplies all numbers in a vector together and returns the resulting value
+#include <numeric>
 int Product(std::vector<int> nums){
 
     return std::accumulate(nums.begin(), nums.end(), 1, std::multiplies<>{});
