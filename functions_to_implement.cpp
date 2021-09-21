@@ -112,8 +112,12 @@ std::vector<double> VectorTimesN(std::vector<double> v, double n);
 // values n*1, n*2, n*3... up to n*m
 std::vector<double> Multiples(double n, double m);
 
+//Kill me
 // returns -1 if the number is negative and 1 if positive
-double Sign(double num);
+int Sign(int num){
+    int output = (num < 0) ? -1 : 1;
+    return output;
+}
 
 
 // adds n to each element of the vector
