@@ -38,7 +38,7 @@ int Sum(std::vector<int> nums);
 #include <numeric>
 int Product(std::vector<int> nums){
 
-    return std::accumulate(nums.begin(), nums.end(), 1, std::multiplies<>{});
+    return 1;
 
 }
 
