@@ -17,6 +17,8 @@ TEST_CASE ( "Signs are computed", "[sign]") {
   REQUIRE( Sign(-2) == -1 );
   REQUIRE( Sign(3) == 1 );
   REQUIRE( Sign(-10) == -1 );
+  REQUIRE( Sign(-10) == -1 );
+  REQUIRE( Sign(-2) == -1 );
 }
 
 TEST_CASE("incrementing values in integer vector", "[addN]"){
